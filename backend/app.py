@@ -3,19 +3,25 @@ import requests
 
 app = Flask(__name__)
 
+#routing to call  the specific url with integer id like "http://localhost:8006/api/pokemon/25"
 @app.route('/api/pokemon/<id>')
 def index(id):
  if ((int(id) >= 1) and( int(id)<= 151)):
+  
      #initialising empty dict to store values of pokemon
      data={}
      data['pokemon']={}
+     
      #storing the value of key 'id' in dict by extracting from route requested
      data['pokemon']['id']= int(id)
+     
      #calling RESTFUL API by dynamically generating URL and converting the data into json format for easy access
      response = requests.get('https://pokeapi.co/api/v2/pokemon/{0}'.format(id)).json()
+     
      #retrieving required values from json data stored in 'response' variable to store into pokemon dict
      data['pokemon']['name']=response['species']['name']
      data['pokemon']['sprite'] = response['sprites']['front_default']
+     
      #json.dumps converts dict into string format and returns
      return json.dumps(data)
  else:
