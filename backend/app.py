@@ -25,7 +25,7 @@ def index(id):
      #json.dumps converts dict into string format and returns
      return json.dumps(data)
  else:
-      return '<h1>The requested id is not valid. Please enter an id in between 1 and 151'  ,404
+      return '<h1>The requested id is not valid. Please enter an id in between 1 and 151</h1>'  ,404
       
 #To handle the case when id requested is not int i.e "api/pokenmon/unknown"
 @app.errorhandler(ValueError)
