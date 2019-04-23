@@ -33,7 +33,7 @@
 
 <h3>Error Cases Handled:</h3>
 
-1. If an id outside the range 1-151 is given in the URL like "http://localhost:8006/api/pokemon/249" then an error message <i>"The requested id is not valid. Please enter an id in between 1 and 151"</i> is displayed with <b>404 status code</b>.
+1. If an id outside the range 1-151 is given in the URL like http://localhost:8006/api/pokemon/249" then an error message <i>"The requested id is not valid. Please enter an id in between 1 and 151"</i> is displayed with <b>404 status code</b>.
 
 2. All <b>404 errors</b> arised during execution display the error message <i>"The entered URL is not valid. Please enter a valid one."</i>
    These errors arise when the URL mentioned contains "http://localhost:8006/----" or "http://localhost:8006/api/pokemon/unknown"
@@ -41,5 +41,6 @@
 4. For any other internal errors no specific error message is written which by default shows internal server error.   
 
 NOTE:
+
 The scrap.py is used to collect all the information from the external API and store in a json file. These data can be regularly updated by using <a href="https://help.ubuntu.com/community/CronHowto">crontab</a> for linux and <a href="https://stackoverflow.com/questions/2725754/schedule-python-script-windows-7">Windows Task Scheduler or in command line</a> for Windows.
    
