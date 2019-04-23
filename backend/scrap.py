@@ -7,7 +7,7 @@ def scrappingToCollectData():
  pokemonDetailsList=[]
  #loop to iterate through id values from 1 to 151
 
- while id <= venv151:
+ while id <= 151:
     data={}
     #storing required values in json format into dict
     data['id'] = id
