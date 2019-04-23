@@ -17,7 +17,7 @@
 
 <h3>How to run the project:</h3>
 
-1. Save app.py in VS Code and activate your virtualvenv .
+1. Save app.py,scrap.py and pokemondetails.json in VS Code and activate your virtualvenv .
 
 2. The name of the virtualenv appears in left of prompt which shows virtualenv is active and then run the file app.py.
 
@@ -35,10 +35,11 @@
 
 1. If an id outside the range 1-151 is given in the URL like "http://localhost:8006/api/pokemon/249" then an error message <i>"The requested id is not valid. Please enter an id in between 1 and 151"</i> is displayed with <b>404 status code</b>.
 
-2. If id provided is not of type integer then error message is displayed <i>"The id provided must be an integer value."</i> with <b>status code 500</b>.
-
-3. All <b>404 errors</b> arised during execution display the error message <i>"The entered URL is not valid. Please enter a valid one."</i>
-   These errors arise when the URL mentioned contains "http://localhost:8006/----"
+2. All <b>404 errors</b> arised during execution display the error message <i>"The entered URL is not valid. Please enter a valid one."</i>
+   These errors arise when the URL mentioned contains "http://localhost:8006/----" or "http://localhost:8006/api/pokemon/unknown"
    
 4. For any other internal errors no specific error message is written which by default shows internal server error.   
+
+NOTE:
+The scrap.py is used to collect all the information from the external API and store in a json file. These data can be regularly updated by using <a href="https://help.ubuntu.com/community/CronHowto">crontab</a> for linux and <a href="https://stackoverflow.com/questions/2725754/schedule-python-script-windows-7">Windows Task Scheduler or in command line</a> for Windows.
    
